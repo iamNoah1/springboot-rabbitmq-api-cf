@@ -1,0 +1,11 @@
+---
+applications:
+- name: spring-rabbitmq-api-cf-props
+  memory: 1G
+  path: target/springboot-rabbitmq-api-cf-props-0.0.1-SNAPSHOT.jar
+  services:
+  - rabbitmq
+  
+  env:
+    JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
+    SPRING_PROFILES_ACTIVE: cloud

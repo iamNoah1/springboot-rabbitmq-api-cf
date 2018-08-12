@@ -1,0 +1,13 @@
+---
+applications:
+- name: spring-rabbitmq-api-cf-connector
+  memory: 1G
+  path: target/springboot-rabbitmq-api-cf-connector-0.0.1-SNAPSHOT.jar
+  services:
+  - rabbitmq
+  
+  env:
+    JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
+    SPRING_PROFILES_ACTIVE: cloud
+    RABBITMQ_SERVICE_NAME: rabbitmq
+    

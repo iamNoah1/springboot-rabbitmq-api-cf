@@ -1,0 +1,7 @@
+---
+applications:
+- name: spring-rabbitmq-api-cf
+  memory: 1G
+  path: target/springboot-rabbitmq-api-cf-0.0.1-SNAPSHOT.jar
+  services:
+  - rabbitmq
