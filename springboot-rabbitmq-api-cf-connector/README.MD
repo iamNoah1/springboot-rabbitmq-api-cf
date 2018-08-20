@@ -11,8 +11,13 @@ Example Java Spring Boot application which can run locally and on Cloud Foundry.
 * create a rabbitmq service in Cloud Foundry named `rabbitmq`
 * `cf push`
 
+## Run integration tests
+* `docker pull rabbitmq:3-management`
+* `docker run -d -p 15672:15672 -p 5672:5672 rabbitmq:3-management`
+* `mvn test` to run explicitly. Running `mvn install` will also run them.
+
 ## Endpoints
 
 ### Send Message
 
-* `curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"message": "blablablaaaa"}' http://localhost:8080/messagecurl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"message": "message for queue"}' http://localhost:8080/message`. Have a look on stdout, the message should appear there.
+* `curl -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"message": "message for queue"}' http://<baseurl>/message`. Have a look on stdout, the message should appear there.
